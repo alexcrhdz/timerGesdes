@@ -15,8 +15,10 @@ class Grupos extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->string('grupo_id', 15)->primary();
-            $table->string('area_id', 15)->foreign();
+            $table->string('area_id', 15);
             $table->string('nombre', 45);
+            $table->foreign('area_id')->references('area_id')->on('areas');
+           
             
         });
     }

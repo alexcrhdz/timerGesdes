@@ -18,6 +18,7 @@ class Usuarios extends Migration
             $table->string('grupo_id', 15);
             $table->string('nombre', 45);
             $table->string('email', 45)->unique();
+            $table->foreign('grupo_id')->references('grupo_id')->on('grupos');
         });
     }
 

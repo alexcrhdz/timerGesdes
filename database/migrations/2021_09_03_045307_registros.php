@@ -18,6 +18,8 @@ class Registros extends Migration
             $table->string('usuario_id', 15);
             $table->date('fecha');
             $table->time('hora');
+            $table->foreign('status_id')->references('status_id')->on('status');
+            $table->foreign('usuario_id')->references('usuario_id')->on('usuarios');
         });
     }
 

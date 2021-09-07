@@ -14,8 +14,9 @@ class Status extends Migration
     public function up()
     {
         Schema::create('status', function (Blueprint $table) {
-            $table->integer('status_id');
+            $table->integer('status_id')->primary();
             $table->string('nombre', 45);
+            $table->string('desc');
         });
     }
 
