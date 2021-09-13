@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\areasController;
+use App\Http\Controllers\gruposController;
+use App\Http\Controllers\registrosController;
+use App\Http\Controllers\statusController;
+use App\Http\Controllers\usuariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class);
+
+Route::get('empleados', [areasController::class, 'areas'])->name('areas');
+
+Route::get('empleados/grupos', [gruposController::class, 'grupos'])->name('grupos');
+
+Route::get('empleados/status', [statusController::class, 'status'])->name('status');
+
+Route::get('empleados/usuarios', [usuariosController::class, 'usuarios'])->name('usuarios');
+
+Route::get('empleados/registros', [registrosController::class, 'registros'])->name('registros');

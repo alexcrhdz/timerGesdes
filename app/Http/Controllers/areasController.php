@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class apreasController extends Controller
+class areasController extends Controller
 {
-    //
+    public function areas(){
+        return view('empleados.areas');
+    }
 }
